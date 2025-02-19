@@ -1,0 +1,219 @@
+**********************************************
+** Papier résumant les points clés de LATEX **
+**********************************************
+
+// HEADER ET STRUCTURE D'UN FICHIER .TEX
+
+% Classe
+\documentclass[a4paper,12pt]{amsart}
+
+% Package 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utopia]{mathdesign}
+
+% Autres
+\addbibresource{references.bib}
+
+% Titre et auteur
+\title{}
+\author{}
+\date{\today}
+
+\begin{document}
+
+	% Résumé
+	\begin{abstract}
+	...
+	\end{abstract}
+
+	\maketitle
+
+	% Tables
+	\tableofcontents
+	\listoffigures
+	\listofalgorithms
+
+	% Corps
+	\section{titre}
+	\subsection{titre}
+
+	% Annexe
+	\appendix
+
+	% References
+	\printbibliography
+
+\end{document}
+
+// INSERTION DE CODE
+
+\usepackage{minted}
+\usemintedstyle{solarized-dark}
+
+\begin{minted}[fontsize=\small, linenos, frame=lines]{python}
+def add(a, b):
+    """
+    Cette fonction additionne deux nombres.
+    """
+    return a + b
+
+print(add(5, 7))
+\end{minted}
+
+// TABLE DES ALGORITHMES
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% cite l'algorithme
+\ref{alg:example}
+
+% définir les algorithmes dans une annexe 
+\section*{Annexe}
+% Si plusieurs annexe
+\section{Algo}
+\section{Code Source}
+
+\begin{algorithm}[H]
+    \caption{Exemple d'algorithme en Python avec Minted}
+    \label{alg:example}
+    \begin{minted}...
+\end{algorithm}
+
+// IMAGE
+
+\usepackage{graphicx}
+
+Figure~\ref{fig:exemple}
+Figure~\autoref{fig:exemple}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chemin-image} 
+    \caption{Une image d'exemple.}
+    \label{fig:exemple} % Crée une référence interne pour citer cette figure
+\end{figure}
+
+// Mathématiques
+
+\usepackage{amsthm}      % environnement permettant de citer
+
+\theoremstyle{plain}
+
+\newtheorem{prop}{Proposition}         % proposition
+\newtheorem{cor}[prop]{Corollaire}     % corollaire
+
+\begin{proof}
+..
+\end{proof}
+
+$..$                % phrase
+\[  ..   \]         % formule
+
+
+x\mapsto\alpha^2\sqrt{\pi}+\frac{1}{2}\,\sum_{i=1}^{n}{\ln x}.
+\zeta
+
+% Symbole de base 
+\widehat{ABC}                  % angle
+\approx                        % approximation
+\propto                        % proportionnel
+\cdot                          % point multiplicatif
+\vec X                         % vecteur
+\forall                        % pour tout
+\exists                        % il existe
+\sim                           % équivalent non logique
+\underset{+\infty}{\sim}       % + infini en dessous
+\pm                            % plus moins
+
+% Comparaison
+\leq                           % inférieur ou égal
+\geq                           % supérieur ou égal
+
+% Opérateurs
+\int                           % intégrale
+\iint                          % double
+\iiint                         % triple
+\oint                          ù intégrale avec un rond 
+\partial                       % dérivé partielle
+\nabla                         % gradient
+\sum_{n=1}^{+\infty}           % somme
+\prod_{p\in\mathcal{P}}        % produit
+\max x                         % max
+\min x                         % min
+\frac                          % fraction
+
+% Ensembles
+\emptyset                      % vide
+\mathbb{N}                     % naturel (réel..)
+\in                            % appartient
+\notin                         % n'appartient pas
+\cup                           % union
+\cap                           % intersection
+
+% Flèches
+\rightarrow                    % flèche droite
+\leftarrow                     % flèche gauche
+\Rightarrow                    % doublé  
+\Leftrightarrow                % double flèche
+\mapsto                        % flèche fonction
+
+% Lettres grecque 
+\alpha                         % \Alpha majuscule
+\beta                        
+\gamma(x)
+\delta
+\pi
+\sigma
+
+% Logique
+\neg                           % non
+\wedge                         % et
+\vee                           % ou
+\implies                       % implique
+\iff                           % équivalent
+
+\mathrm{}                      % écriture romaine
+\mathbf{}                      % gras
+f\in\mathcal{C}                % Caligraphie
+\sigma\in\mathfrak{S}_n        % Gothique
+n\in\mathbb{N}                 % Ajourée
+
+
+// BIBLIOGRAPHIE 
+
+	// 1
+	\usepackage[backend=biber,style=ieee]{biblatex}
+	\addbibresource{references.bib} 
+
+	\cite{}.
+	\textcite{}
+
+	\printbibliography
+
+	// 2
+	\cite{}
+
+	\bibliographystyle{unsrt} % ou siam, acm
+	\bibliography{references}
+
+// REFERENCES.bib
+
+@type{nom,
+  author    = {},
+  title     = {},
+  year      = {},
+  publisher = {},
+  volume    = {},
+  pages     = {},
+  url       = {},
+  note      = {},
+}
+
+// LIEN HYPERTEXT
+
+\usepackage[hidelinks]{hyperref}
+
+
+
