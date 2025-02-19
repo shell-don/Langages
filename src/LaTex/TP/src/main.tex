@@ -1,0 +1,185 @@
+\documentclass[conference]{IEEEtran} 
+
+\usepackage[utf8]{inputenc}                    
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\title{Exercices TP d'initiation au \LaTeX}
+\author{
+    \IEEEauthorblockN{Pigassou Mathis\IEEEauthorrefmark{1}} 
+    \IEEEauthorblockA{UFR Informatique, Université Toulouse Capitole, France\\
+    Email: mathis.pigassou@ut-capitole.fr}
+}
+
+\begin{document}
+
+\maketitle  
+
+\begin{abstract}
+Réponses du premier au dix-huitième exercice du TP d'initiation au LaTeX.
+\end{abstract}
+\begin{IEEEkeywords} 
+Mathématiques, \LaTeX
+\end{IEEEkeywords}
+
+\section{} 
+\noindent
+Pour $n$ entier naturel non nul, on pose $u_0 = 0$ et $u_n = u_{n-1} + n$. \newline
+Alors 
+\[\forall n \leq 0, u_n = \frac{n(n+1)}{2}.\]
+
+\section{}
+\noindent
+La formule de Stirling exprime, pour n grand, que
+\[n! \sim Cn^n\sqrt{n}\exp{-n},\]
+où $C=\sqrt{2\pi}.$ Cette constante peut se calculer en utilisant la formule de Wallis, que l'on trouve grâce aux intégrales éponymes :
+\[\forall n \in \mathbb{N}, I_n=\int_{0}^{\frac{\pi}{2}} (\sin x)^n \,dx.\]
+
+\section{}
+\noindent
+La fonction $\Gamma:\mathbb{R_+^*} \rightarrow \mathbb{R},$ définie par
+\[\Gamma(x)=\int_0^{+\infty}t^{x-1}\mathrm{e}^{-t}\, dt\] 
+et appelée "fonction Gamma (d'Euleur)", généralise la factorielle. En effet, $\forall n\in\mathbb{N^*},\Gamma(n+1)=n!$. On peut aussi montrer que 
+\[\Gamma(\frac{1}{2})=\sqrt{\pi},\]
+en se ramenant à l'intégrale de Gauss $I=\int_0^{+\infty}\mathrm{e}^{-t^2}$ (par changement de variables), cette dernière valant $\frac{\sqrt{\pi}}{2}$ (par exemple en considérant le carré de $I$ et un passage en coordonnées polaires).
+
+\section{}
+\noindent
+Pour $M\in \mathcal{M}_n(\mathbb{Z}),$
+\[M\in GL_n(\mathbb{Z}) \iff \det M = \pm 1.\]
+
+\section{}
+\noindent
+Considérons $\phi, \Sigma, \hbar, \epsilon$ et \emph{l} des réels et ($O$, $\vec i$, $\vec j$) un repère orthonormé.
+
+\section{}
+\noindent
+Écrivons le moment magnétique
+\[ \overrightarrow{\mathcal{M}} = \frac{1}{2}\iiint_V \overrightarrow{OP} \wedge \vec j(P) \, dr \text{\quad($\mathcal{V}$ étant un volume)}.\]  
+
+\section{}
+\noindent
+L'exercice 3 peut aider au calcul de l'intégrale de Fresnel 
+\[ \varphi \overset{def}{=} \int_0^{+\infty} \exp(ix^2) \,dx = \frac{\sqrt{\pi}}{2} \exp\left(\frac{i\pi}{4}\right) \]
+en montrant, pour $\alpha$ dans ]0,1[, que 
+\[ J:\alpha\longmapsto\int_{]0,+\infty[}t^{a-1}\mathrm{e^it}\,dt\]
+vérifie
+\[J(\alpha)=\Gamma(\alpha)\mathrm{e^{i\alpha\frac{\pi}{2}}}.\]
+
+\section{}
+\noindent
+Si $f\in L^1(\mathbb{R})$ alors sa transformée de Fourier, notée $\hat{f}$, est continue et vérifie (pour une définition bien choisie)
+\[\hat{f}(x) \xrightarrow[x\rightarrow\pm\infty]{}0\quad \textit{et} \quad \left\| \frac{\hat{f}}{2\pi}\right\|_\infty \leq \left\| f\right\|_{1}. \]
+
+\section{}
+\noindent
+Soit $a_1,\ldots,a_k\in\mathbb{N^*}$. Supposons les $a_i$ premiers entre eux dans leur ensemble (pour $i\in \{1,\ldots,k\}$ et notons, pour $n\geq 1$, $u_n$ le nombre de $k$-uplets $(x_1,\ldots,x_k)\in\mathbb{N}^k$ tels que ${\displaystyle \sum_{i=1}^ka_ix_i=n}$. \newline
+Alors
+\[ u_n\underset{+\infty}{\sim}\frac{1}{a_1a_2\ldots a_k}\frac{n^{k-1}}{(k-1)!}.\]
+
+\section{}
+\noindent
+Pour avoir la valeur d'une intégrale, deux moyens existent :
+\begin{enumerate}
+    \item Calculer sa valeur exacte. Différents outils peuvent être utilisés, en particulier :
+    \begin{itemize}
+        \item[-] la règle des invariants de Bioche :
+        \begin{itemize}
+            \item[-] si $-x\leftarrow x$ est un invariant, on utilise $u = \cos x$,
+            \item[-] si c'est $\pi-x\leftarrow x$, on utilise $u=\sin x$,
+            \item[-] si c'est $\pi+x\leftarrow x$, on utilise $u=\tan x$;
+        \end{itemize}
+        \item[-] le théorème des résidus;
+        \item[-] l'égalité de Plancherel-Parseval.
+    \end{itemize}
+    \item Calculer une valeur approchée. On distingue deux types de méthodes :
+    \begin{itemize}
+        \item[(a)] des méthodes déterministes, contenant :
+        \begin{itemize}
+            \item[i.] les méthodes de Newton-Cotes,
+            \item[ii.] les méthodes de Gauss;
+        \end{itemize}
+        \item[(b)] une méthode probabiliste : la méthode de Monte-Carlo. 
+    \end{itemize}
+\end{enumerate}
+
+\section{}
+\noindent
+À savoir sur les méthodes de quadrature :
+\newline
+\newline
+\begin{tabular}{|c|c|}
+    \hline
+    Méthode & Ordre \\
+    \hline
+    \hline
+    Rectangles à gauche & 0 \\
+    Rectangles à droite & 0 \\
+    Point milieu & 1 \\
+    \hline
+    Trapèzes & 1 \\
+    \hline
+    Simpson & 3 \\
+    \hline
+\end{tabular}
+
+
+\section{}
+\noindent
+Voici un parallèle entre des méthodes de calcul approché d'intégrales et des shémas de résolution approchée d'équations différentielles ordinaires :
+\newline
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{2}{|c||}{Méthode de quadrature} & Schéma EDO \\
+    \hline
+    \multicolumn{1}{|c|}{Nom} & \multicolumn{1}{c||}{Ordre} & \multicolumn{1}{r|}{Nom} \\
+    \hline
+    Rectangles à gauche & \multicolumn{1}{c||}{0}  & \multicolumn{1}{l|}{Euler explicite} \\
+    \hline
+    Rectangles à droite & \multicolumn{1}{c||}{0} & \multicolumn{1}{l|}{Euler implicite} \\
+    \hline
+    \multicolumn{1}{|r|}{Point milieu} & \multicolumn{1}{c||}{1} & \multicolumn{1}{l|}{Euler modifié} \\
+    \hline
+    \multicolumn{1}{|r|}{Trapèzes} & \multicolumn{1}{c||}{1} & \multicolumn{1}{l|}{Crank-Nicolson}\\
+    \hline
+    \multicolumn{1}{|r|}{Simpson} & \multicolumn{1}{c||}{3} & \multicolumn{1}{l|}{Runge-Kutta d'ordre 4 (RK4)}\\
+    \hline
+\end{tabular}
+
+\section{}
+\noindent
+
+On a l'identité remarquable, numérotée \eqref{eq:11} :
+\begin{equation}
+\forall a,b\in \mathbb{N},\quad(a+b)^2=a^2+2ab+b^2.
+\label{eq:11}
+\end{equation}
+
+\section{}
+\noindent
+Pour tout $(a_1,\ldots,a_n)\in\mathbb{K}^n$, le déterminant de Vandermonde est
+\[V(a_1,\ldots,a_n)= \begin{vmatrix} 
+1 & a_1 & \ldots & a_1^{n-1} \\
+1 & a_2 & \ldots & a_2^{n-1} \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & a_n & \ldots & a_n^{n-1}
+\end{vmatrix} = \prod_{1\leq i <j\leq n}(a_j - a_i).\]
+
+\section{}
+\noindent
+Soit $(u_n)_{n\in \mathbb{N}}$ définie par $u_0\in ]0,\frac{\pi}{2}]$ et $\forall n \in \mathbb{N}, \, u_{n+1}=\sin (u_n)$. Alors on peut montrer successivement que : 
+\[\lim_{n\rightarrow +\infty} u_n = 0,\]
+\[u_n \underset{+\infty}{\sim} \sqrt{\frac{3}{n}},\]
+\[u_n \underset{+\infty}{=} \sqrt{\frac{3}{n}}- \underset{= O\left( \frac{\ln n}{n\sqrt{n}} \right)}{\underbrace{\frac{3\sqrt{3}}{10}\frac{\ln n}{n\sqrt{n}}+ o\left( \frac{\ln n}{n\sqrt{n}}\right)}}.\]
+
+\section{}
+\noindent
+Soit $f: \underset{x \quad \longmapsto \quad \frac{\sin x}{x}}{\mathbb{R} \setminus \{ 0 \} \longrightarrow \mathbb{R}}.$ On peut prolonger $f$ par continuité en $\sin_c$ définie par $\sin_c(x) = \begin{cases}
+f(x) & \text{si } x \in ]-\infty,0[\cup]0,+\infty[\\
+1 & \text{sinon}
+\end{cases}$
+
+
+
+\end{document}
